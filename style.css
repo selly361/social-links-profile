@@ -1,0 +1,168 @@
+/* Colors */
+
+:root {
+	--green: hsl(75, 94%, 57%);
+	--white: hsl(0, 0%, 100%);
+	--grey: hsl(0, 0%, 20%);
+	--darkGrey: hsl(0, 0%, 12%);
+	--offBlack: hsl(0, 0%, 8%);
+}
+
+/* Box sizing rules */
+/* Remove default margin and padding */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* Set core root defaults */
+
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+body {
+	overflow-x: hidden;
+	min-height: 100vh;
+	background-color: var(--offBlack);
+	font-family: 'Inter', sans-serif;
+	font-style: normal;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Remove default styles on Button and Anchor elements */
+
+a {
+	outline: none;
+	border: none;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+/* Remove default styles on Input Element */
+
+input {
+	outline: none;
+	border: none;
+}
+
+/* Remove list styles on ul, ol elements*/
+
+ul,
+ol {
+	list-style: none;
+}
+
+/* Accessibility */
+
+a:focus {
+	outline: none;
+}
+
+a:focus-visible {
+	outline: 2px dashed var(--green);
+	outline-offset: 2px;
+}
+
+.main {
+	height: max-content;
+	width: 384px;
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 12px;
+	background-color: var(--darkGrey);
+}
+
+.main__user__profile {
+	width: 88px;
+	height: 88px;
+	border-radius: 50%;
+}
+
+.main__user__name {
+	color: var(--white);
+	text-align: center;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 150%;
+  margin-top: 24px;
+}
+
+.main__user__location {
+	color: var(--green);
+	text-align: center;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 150%;
+  margin-top: 4px;
+}
+
+.main__user__quote {
+	color: var(--white);
+	text-align: center;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 150%;
+  margin-top: 24px;
+}
+
+.main__links {
+	width: 304px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+  margin-top: 24px;
+}
+
+.main__links__link {
+	height: 45px;
+	width: 304px;
+	border-radius: 8px;
+	background: var(--grey);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 150%;
+  display: grid;
+  place-items: center;
+  transition: .5s ease color, .5s ease background-color;
+}
+
+@media (hover: hover) {
+	.main__links__link:hover {
+		background-color: var(--green);
+		color: var(--grey);
+	}
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+
+@media (max-width: 768px) {
+	.main {
+		padding: 20px;
+	}
+}
